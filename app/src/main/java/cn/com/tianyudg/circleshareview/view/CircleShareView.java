@@ -54,7 +54,7 @@ public class CircleShareView extends View {
     }
 
     public CircleShareView(Context context, List<Float> shares, List<Integer> colors) {
-  
+
         this(context, null);
         this.shares = shares;
         this.colors = colors;
