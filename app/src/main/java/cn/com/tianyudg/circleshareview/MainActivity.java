@@ -19,6 +19,6 @@ public class MainActivity extends AppCompatActivity {
         List<Integer> integers = Arrays.asList(Color.RED, Color.BLUE, Color.GREEN);
         List<Float> floats = Arrays.asList(0.3f, 0.4f, 0.3f);
 
-//        circleShareView.setShareAndColor(floats,integers);
+        circleShareView.setShareAndColor(floats,integers);
     }
 }
