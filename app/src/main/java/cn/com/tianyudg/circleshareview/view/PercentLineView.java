@@ -103,8 +103,6 @@ public class PercentLineView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
 
-
-
         canvas.drawLine(temp, halfHeight, (width - temp) * percentage, halfHeight, mPaint);
 
 
