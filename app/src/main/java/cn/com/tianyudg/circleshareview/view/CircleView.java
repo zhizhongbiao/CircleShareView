@@ -71,10 +71,12 @@ public class CircleView extends View {
 
 
     @Override
-    public void onWindowFocusChanged(boolean hasWindowFocus) {
-        super.onWindowFocusChanged(hasWindowFocus);
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
         initParams();
     }
+
+
 
     private void initParams() {
         width = getWidth();
