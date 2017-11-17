@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.support.annotation.ColorInt;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import java.util.List;
 public class CircleShareView extends View {
 
 
+    private static final String TAG = "CircleShareView";
     private int width;
     private int height;
     private int halfWidth;
@@ -112,15 +114,21 @@ public class CircleShareView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         if (shares == null || shares.isEmpty()) {
-            throw new RuntimeException("List<Float> shares can not be null and its size can not be zero");
+//            throw new RuntimeException("List<Float> shares can not be null and its size can not be zero");
+            Log.e(TAG, "List<Float> shares can not be null and its size can not be zero" );
+            return;
         }
 
         if (colors == null || colors.isEmpty()) {
-            throw new RuntimeException("List<Integer> colors can not be null and its size can not be zero");
+//            throw new RuntimeException("List<Integer> colors can not be null and its size can not be zero");
+            Log.e(TAG, "List<Integer> colors can not be null and its size can not be zero" );
+            return;
         }
 
         if (colors.size() != shares.size()) {
-            throw new RuntimeException("List<Integer> colors's size must be same with List<Float> shares's  ");
+//            throw new RuntimeException("List<Integer> colors's size must be same with List<Float> shares's  ");
+            Log.e(TAG, "List<Integer> colors's size must be same with List<Float> shares's  " );
+            return;
         }
         startAngles.clear();
 

@@ -5,12 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF"
+    android:orientation="vertical"
     android:gravity="center"
     tools:context="cn.com.tianyudg.circleshareview.MainActivity">
 
 
     <cn.com.tianyudg.circleshareview.view.CircleShareView
         android:id="@+id/csv"
+        android:layout_width="100dp"
+        android:layout_height="150dp" />
+
+    <cn.com.tianyudg.circleshareview.view.CircleView
+        android:id="@+id/cv"
         android:layout_width="100dp"
         android:layout_height="150dp" />
 
