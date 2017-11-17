@@ -90,6 +90,12 @@ public class CircleShareView extends View {
         mSmallPaint.setColor(Color.WHITE);
     }
 
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        initParams();
+    }
+
 
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {

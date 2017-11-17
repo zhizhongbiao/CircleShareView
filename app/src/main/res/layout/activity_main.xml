@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context="cn.com.tianyudg.circleshareview.MainActivity">
 
 
@@ -17,8 +17,15 @@
 
     <cn.com.tianyudg.circleshareview.view.CircleView
         android:id="@+id/cv"
-        app:circle_color="@color/colorPrimary"
         android:layout_width="100dp"
-        android:layout_height="150dp" />
+        android:layout_height="150dp"
+        app:circle_color="@color/colorPrimary" />
+
+
+    <cn.com.tianyudg.circleshareview.view.PercentLineView
+        android:layout_width="300dp"
+        app:line_color="@color/colorAccent"
+        app:line_height="40px"
+        android:layout_height="20dp" />
 
 </LinearLayout>

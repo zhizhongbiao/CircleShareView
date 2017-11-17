@@ -6,4 +6,11 @@
         <attr name="circle_color" format="color" />
     </declare-styleable>
 
+    <!--画线控件-->
+    <declare-styleable name="PercentLineView">
+        <attr name="line_color" format="color" />
+        <attr name="line_height" format="dimension" />
+    </declare-styleable>
+
+
 </resources>

@@ -51,7 +51,7 @@ public class CircleView extends View {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CircleView, defStyleAttr, 0);
         circleColor = typedArray.getColor(R.styleable.CircleView_circle_color, Color.RED);
         initPaint();
-
+        typedArray.recycle();
 
     }
 //
