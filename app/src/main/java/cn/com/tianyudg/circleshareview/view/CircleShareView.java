@@ -53,13 +53,6 @@ public class CircleShareView extends View {
         invalidate();
     }
 
-    public CircleShareView(Context context, List<Float> shares, List<Integer> colors) {
-
-        this(context, null);
-        this.shares = shares;
-        this.colors = colors;
-    }
-
 
     public CircleShareView(Context context) {
         this(context, null);
@@ -130,10 +123,16 @@ public class CircleShareView extends View {
             throw new RuntimeException("List<Integer> colors's size must be same with List<Float> shares's  ");
         }
         startAngles.clear();
-        startAngles.add(defaultStartAngle);
-        for (Float share : shares) {
-            startAngles.add(share * 360 - 90);
+
+        for (int i = 0; i < shares.size(); i++) {
+            if (i == 0) {
+                startAngles.add(defaultStartAngle);
+            } else {
+                startAngles.add(startAngles.get(i - 1) + shares.get(i - 1) * 360);
+            }
+
         }
+
 
         for (int i = 0; i < colors.size(); i++) {
             mBigPaint.setColor(colors.get(i));
