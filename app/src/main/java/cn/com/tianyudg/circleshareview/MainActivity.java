@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         CircleShareView circleShareView = (CircleShareView) findViewById(R.id.csv);
-        List<Integer> integers = Arrays.asList(Color.RED, Color.BLUE, Color.GREEN);
-        List<Float> floats = Arrays.asList(0.3f, 0.4f, 0.3f);
+        List<Integer> integers = Arrays.asList(Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW);
+        List<Float> floats = Arrays.asList(0.1f, 0.4f, 0.3f,0.2f);
 
         circleShareView.setShareAndColor(floats,integers);
     }

@@ -17,6 +17,7 @@
 
     <cn.com.tianyudg.circleshareview.view.CircleView
         android:id="@+id/cv"
+        app:circle_color="@color/colorPrimary"
         android:layout_width="100dp"
         android:layout_height="150dp" />
 
