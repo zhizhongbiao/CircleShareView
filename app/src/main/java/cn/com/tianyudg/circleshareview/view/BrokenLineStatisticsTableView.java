@@ -162,7 +162,7 @@ public class BrokenLineStatisticsTableView extends View {
         //X轴开始边距
         coordinateXStart = width * 0.1f;
         //Y轴还在占据的高度
-        coordinateY = height * 0.7f;
+        coordinateY = height * 0.65f;
         //Y轴开始的边距
         coordinateYStart = height * 0.1f;
         halfWidth = width / 2;
