@@ -12,5 +12,13 @@
         <attr name="line_height" format="dimension" />
     </declare-styleable>
 
+    <!--曲线图控件-->
+    <declare-styleable name="BrokenLineStatisticsTableView">
+        <attr name="broken_line_color" format="color" />
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="circle_point_color" format="color" />
+    </declare-styleable>
+
 
 </resources>

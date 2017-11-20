@@ -28,4 +28,11 @@
         app:line_height="40px"
         android:layout_height="20dp" />
 
+
+    <cn.com.tianyudg.circleshareview.view.BrokenLineStatisticsTableView
+        android:id="@+id/blst"
+        android:background="#75936c"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
 </LinearLayout>
