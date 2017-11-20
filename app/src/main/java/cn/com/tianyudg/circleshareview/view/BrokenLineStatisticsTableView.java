@@ -172,7 +172,8 @@ public class BrokenLineStatisticsTableView extends View {
         mPath = new Path();
         if (xSubjectSize <= 0) return;
         //X轴单位长度
-        singleLength = coordinateX / xSubjectSize;
+//        singleLength = coordinateX / xSubjectSize;
+        singleLength = width / (xSubjectSize+1);
 
     }
 
@@ -252,7 +253,7 @@ public class BrokenLineStatisticsTableView extends View {
         yPointsForText.clear();
         yPointsForLine.clear();
         for (int i = 0; i < ySubject.size(); i++) {
-            float yPoint = height - coordinateYStart * 1.5f - (coordinateY * (ySubject.get(i) / biggestY));
+            float yPoint = height - coordinateYStart * 1.8f - (coordinateY * (ySubject.get(i) / biggestY));
             canvas.drawCircle(xCenterPointsForCircle.get(i), yPoint, radius, mCirclePaint);
             yPointsForText.add(yPoint - radius / 2f * 3f);
             yPointsForLine.add(yPoint);
@@ -269,7 +270,8 @@ public class BrokenLineStatisticsTableView extends View {
         xCenterPointsForCircle.clear();
 
         for (int i = 0; i < xSubject.size(); i++) {
-            float xCenterPointForCircle = coordinateXStart + singleLength * i;
+//            float xCenterPointForCircle = coordinateXStart + singleLength * i;
+            float xCenterPointForCircle = singleLength + singleLength * i;
             float xCenterPointForText = xCenterPointForCircle - getTextHalfLength(xSubject.get(i), mTextPaint);
             canvas.drawText(xSubject.get(i), xCenterPointForText, height - coordinateYStart / 2, mTextPaint);
             xCenterPointsForCircle.add(xCenterPointForCircle);
