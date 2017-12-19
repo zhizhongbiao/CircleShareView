@@ -11,6 +11,7 @@ import android.view.View;
 
 import cn.com.tianyudg.circleshareview.R;
 
+
 /**
  * Author : WaterFlower.
  * Created on 2017/11/16.
@@ -31,14 +32,18 @@ public class PercentLineView extends View {
 
     private float percentage = 1f;
     private int halfHeight;
+    private int mLineColor;
+    private int mLineHeight;
 
     public PercentLineView setPercentage(float percentage) {
         this.percentage = percentage;
+        updateView();
         return this;
     }
 
-    private PercentLineView seLinetColor(@ColorInt int color) {
+    private PercentLineView setLinetColor(@ColorInt int color) {
         mPaint.setColor(color);
+        updateView();
         return this;
     }
 
@@ -57,17 +62,18 @@ public class PercentLineView extends View {
     }
 
     public PercentLineView(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
-    }
-
-    public PercentLineView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+        super(context, attrs, defStyleAttr);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.PercentLineView, defStyleAttr, 0);
-        int lineColor = typedArray.getColor(R.styleable.PercentLineView_line_color, Color.RED);
-        int lineHeight = typedArray.getDimensionPixelSize(R.styleable.PercentLineView_line_height,10);
-        initPaint(lineColor,lineHeight);
+        mLineColor = typedArray.getColor(R.styleable.PercentLineView_line_color, Color.RED);
+        mLineHeight = typedArray.getDimensionPixelSize(R.styleable.PercentLineView_line_height, 10);
+        initPaint(mLineColor, mLineHeight);
         typedArray.recycle();
     }
+
+//    public PercentLineView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+//        super(context, attrs, defStyleAttr, defStyleRes);
+//
+//    }
 
 
     private void initPaint(int lineColor, int lineHeight) {
@@ -102,8 +108,16 @@ public class PercentLineView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-
-        canvas.drawLine(temp, halfHeight, (width - temp) * percentage, halfHeight, mPaint);
+        if (percentage < 0) {
+            percentage = 0 - percentage;
+            if (percentage > 1) {
+                percentage = 1;
+            }
+            mPaint.setColor(Color.CYAN);
+        } else {
+            mPaint.setColor(mLineColor);
+        }
+        canvas.drawLine(temp / 2, halfHeight, temp / 2 + (width - temp) * percentage, halfHeight, mPaint);
 
 
     }

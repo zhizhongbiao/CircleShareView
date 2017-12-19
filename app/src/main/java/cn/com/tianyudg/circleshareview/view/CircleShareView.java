@@ -21,8 +21,8 @@ import java.util.List;
 
 public class CircleShareView extends View {
 
-
     private static final String TAG = "CircleShareView";
+
     private int width;
     private int height;
     private int halfWidth;
@@ -62,17 +62,20 @@ public class CircleShareView extends View {
 
     public CircleShareView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
+
     }
 
     public CircleShareView(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
-    }
-
-    public CircleShareView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+        super(context, attrs, defStyleAttr);
         initBigPaint();
         initSmallPaint();
     }
+//
+//    public CircleShareView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+//        super(context, attrs, defStyleAttr, defStyleRes);
+//        initBigPaint();
+//        initSmallPaint();
+//    }
 
     private void initBigPaint() {
         mBigPaint = new Paint();
@@ -95,7 +98,6 @@ public class CircleShareView extends View {
         super.onLayout(changed, left, top, right, bottom);
         initParams();
     }
-
 
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {

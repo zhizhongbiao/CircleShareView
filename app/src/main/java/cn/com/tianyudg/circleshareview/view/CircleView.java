@@ -53,6 +53,7 @@ public class CircleView extends View {
         initPaint();
         typedArray.recycle();
 
+
     }
 //
 //    public CircleShareView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -69,14 +70,17 @@ public class CircleView extends View {
         mPaint.setColor(circleColor);
     }
 
-
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
         initParams();
     }
 
-
+    @Override
+    public void onWindowFocusChanged(boolean hasWindowFocus) {
+        super.onWindowFocusChanged(hasWindowFocus);
+//        initParams();
+    }
 
     private void initParams() {
         width = getWidth();

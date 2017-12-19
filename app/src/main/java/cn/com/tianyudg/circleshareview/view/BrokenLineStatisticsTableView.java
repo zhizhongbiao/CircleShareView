@@ -18,6 +18,7 @@ import java.util.List;
 
 import cn.com.tianyudg.circleshareview.R;
 
+
 /**
  * Author : WaterFlower.
  * Created on 2017/11/17.
@@ -172,7 +173,7 @@ public class BrokenLineStatisticsTableView extends View {
         mPath = new Path();
         if (xSubjectSize <= 0) return;
         //X轴单位长度
-//        singleLength = coordinateX / xSubjectSize;
+//        singleLength = coordinateX / (xSubjectSize+1);
         singleLength = width / (xSubjectSize+1);
 
     }
@@ -273,7 +274,7 @@ public class BrokenLineStatisticsTableView extends View {
 //            float xCenterPointForCircle = coordinateXStart + singleLength * i;
             float xCenterPointForCircle = singleLength + singleLength * i;
             float xCenterPointForText = xCenterPointForCircle - getTextHalfLength(xSubject.get(i), mTextPaint);
-            canvas.drawText(xSubject.get(i), xCenterPointForText, height - coordinateYStart / 2, mTextPaint);
+            canvas.drawText(xSubject.get(i), xCenterPointForText, height - coordinateYStart / 2f, mTextPaint);
             xCenterPointsForCircle.add(xCenterPointForCircle);
 
         }
